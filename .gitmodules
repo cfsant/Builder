@@ -1,0 +1,6 @@
+[submodule "Client"]
+	path = Client
+	url = https://github.com/cfsant/Client.git
+[submodule "Services"]
+	path = Services
+	url = https://github.com/cfsant/Services.git
