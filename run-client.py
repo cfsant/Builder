@@ -8,7 +8,9 @@ def main():
     
     os.chdir(f'{path}/Client')
     os.system('yarn install')
+    print('\n')
     os.system('yarn build')
+    print('\n')
     os.system('yarn start')
 
 main()
