@@ -3,6 +3,7 @@ import sys, os, threading, subprocess
 def main():
     # Inicialização
     os.system('cls')
+    os.system('npm install')
     print(f'Initialize build on base path {os.path.dirname(os.path.abspath(sys.argv[0]))}...\n')
 
     # Escopo
