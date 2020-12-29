@@ -44,22 +44,22 @@ def main():
         print(f'Read .proto files: {filescount}.')
 
     # Criar classes baseadas nos arquivos .proto
-    print('- Create classes based on .proto files...')
+    print('\n- Create classes based on .proto files...')
     cmd = f'grpc_tools_node_protoc --plugin=protoc-gen-ts={nodemodulespath}protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:{outpath} --ts_out={outpath} -I {inpath} {filesnames}'
     os.chdir(nodemodulespath) 
     os.system(cmd)
 
     print('\n- Compile SCSS files...')
-    os.system(f"node-sass --watch {}")
+    os.system(f"node-sass {stylesscsspath} -o {stylescsspath}")
 
     os.chdir(path) 
 
     # Executa o serviço gRPC
-    #print('- Init gRPC Service')
-    #subprocess.Popen(['py', 'run-services.py'], creationflags=subprocess.CREATE_NEW_CONSOLE, env=os.environ)
+    # print('\n- Init gRPC Service')
+    # subprocess.Popen(['py', 'run-services.py'], creationflags=subprocess.CREATE_NEW_CONSOLE, env=os.environ)
 
     # Executa o cliente
-    print('- Init client')
+    print('\n- Init client')
     subprocess.Popen(['py', 'run-client.py'], creationflags=subprocess.CREATE_NEW_CONSOLE, env=os.environ)
 
 main()
