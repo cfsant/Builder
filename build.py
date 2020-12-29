@@ -10,6 +10,8 @@ def main():
     nodemodulespath = f'{path}\\node_modules\\.bin\\'
     inpath = f'{path}\\Protos' 
     outpath = f'{path}\\Client\\proto'
+    stylesscsspath = f'{path}\\Client\\src\\styles\\scss'
+    stylescsspath = f'{path}\\Client\\src\\styles\\css'
 
     # Instalação dos pacotes npm
     print('- Restore npm packages...\n')
@@ -47,11 +49,14 @@ def main():
     os.chdir(nodemodulespath) 
     os.system(cmd)
 
+    print('\n- Compile SCSS files...')
+    os.system(f"node-sass --watch {}")
+
     os.chdir(path) 
 
     # Executa o serviço gRPC
-    print('- Init gRPC Service')
-    subprocess.Popen(['py', 'run-services.py'], creationflags=subprocess.CREATE_NEW_CONSOLE, env=os.environ)
+    #print('- Init gRPC Service')
+    #subprocess.Popen(['py', 'run-services.py'], creationflags=subprocess.CREATE_NEW_CONSOLE, env=os.environ)
 
     # Executa o cliente
     print('- Init client')
